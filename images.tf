@@ -5,5 +5,5 @@ data "docker_registry_image" "team_city" {
 resource "docker_image" "team_city_image" {
   name          = data.docker_registry_image.team_city.name
   pull_triggers = [data.docker_registry_image.team_city.sha256_digest]
-  keep_locally  = false
+  keep_locally  = true
 }
